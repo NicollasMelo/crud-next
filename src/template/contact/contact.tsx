@@ -12,6 +12,7 @@ export default function Contact() {
   const handleSaveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setSavedName(name);
     e.preventDefault();
+    setName("");
   };
 
   return (
@@ -67,23 +68,7 @@ export default function Contact() {
                 />
               </div>
             </div>
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="company"
-                className="block text-sm font-semibold leading-6 text-gray-900"
-              >
-                Nome da companhia que trabalha
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  autoComplete="organization"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
+
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
@@ -130,9 +115,9 @@ export default function Contact() {
                     aria-hidden="true"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     />
                   </svg>
                 </div>
