@@ -5,14 +5,56 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [savedName, setSavedName] = useState("");
 
+  const [lastName, setLastName] = useState("");
+  const [savedLastName, setSavedLastName] = useState("");
+
+  const [email, setEmail] = useState("");
+  const [savedEmail, setSavedEmail] = useState("");
+
+  const [phone, setPhone] = useState("");
+  const [savedPhone, setSavedPhone] = useState("");
+
+  const [message, setMessage] = useState("");
+  const [savedMessage, setSavedMessage] = useState("");
+
   const handleGetName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   };
 
+  const handleGetLastName = (e: ChangeEvent<HTMLInputElement>) => {
+    setLastName(e.target.value);
+  };
+
+  const handleGetEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handleGetPhoneNumber = (e: ChangeEvent<HTMLInputElement>) => {
+    setPhone(e.target.value);
+  };
+
+  const handleGetMessage = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  };
+
   const handleSaveClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setSavedName(name);
+    setSavedLastName(lastName);
+    setSavedEmail(email);
+    setSavedPhone(phone);
+    setSavedMessage(message);
     e.preventDefault();
     setName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+  };
+
+  const renderNames = () => {
+    return (
+      savedName || savedLastName || savedEmail || savedPhone || savedMessage
+    );
   };
 
   return (
@@ -37,7 +79,7 @@ export default function Contact() {
                 htmlFor="first-name"
                 className="block text-sm font-semibold leading-6 text-gray-900"
               >
-                Nome {savedName}
+                Nome
               </label>
               <div className="mt-2.5">
                 <input
@@ -48,6 +90,7 @@ export default function Contact() {
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   value={name}
                   onChange={handleGetName}
+                  maxLength={255}
                 />
               </div>
             </div>
@@ -65,6 +108,9 @@ export default function Contact() {
                   id="last-name"
                   autoComplete="family-name"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  value={lastName}
+                  onChange={handleGetLastName}
+                  maxLength={255}
                 />
               </div>
             </div>
@@ -83,6 +129,9 @@ export default function Contact() {
                   id="email"
                   autoComplete="email"
                   className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  value={email}
+                  onChange={handleGetEmail}
+                  maxLength={255}
                 />
               </div>
             </div>
@@ -127,6 +176,9 @@ export default function Contact() {
                   id="phone-number"
                   autoComplete="tel"
                   className="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  value={phone}
+                  onChange={handleGetPhoneNumber}
+                  maxLength={50}
                 />
               </div>
             </div>
@@ -141,8 +193,11 @@ export default function Contact() {
                 <textarea
                   name="message"
                   id="message"
-                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                ></textarea>
+                  className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-24"
+                  value={message}
+                  onChange={handleGetMessage}
+                  maxLength={800}
+                />
               </div>
             </div>
           </div>
@@ -155,10 +210,24 @@ export default function Contact() {
             </button>
           </div>
           <div>
-            {savedName && (
-              <p className="mt-4 text-sm text-gray-600">
-                Nome salvo: {savedName}
-              </p>
+            {renderNames() && (
+              <div>
+                <p className="mt-4 text-sm text-gray-600 max-w-[30rem]">
+                  Nome salvo: {savedName}
+                </p>
+                <p className="mt-4 text-sm text-gray-600 max-w-[30rem]">
+                  Sobrenome salvo: {savedLastName}
+                </p>
+                <p className="mt-4 text-sm text-gray-600 max-w-[30rem]">
+                  E-mail salvo: {savedEmail}
+                </p>
+                <p className="mt-4 text-sm text-gray-600 max-w-[30rem]">
+                  Numero salvo: {savedPhone}
+                </p>
+                <p className="mt-4 text-sm text-gray-600 max-w-[30rem]">
+                  Mensagem salva: {savedMessage}
+                </p>
+              </div>
             )}
           </div>
         </form>
