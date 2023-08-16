@@ -1,6 +1,6 @@
 import Image from "next/image";
 import about from "../../../public/about.jpeg";
-import Footer from "../footer/Footer";
+import Footer from "../footer/footer";
 
 export default function About() {
   return (

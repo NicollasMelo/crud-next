@@ -1,7 +1,7 @@
 import Image from "next/image";
 import github from "../../../public/github.svg";
 import linkedin from "../../../public/linkedin.svg";
-import ScrollUp from "../functions/ScrollUp";
+import ScrollUp from "../../utils/scrollUp";
 
 export default function Footer() {
   const getNewDate = new Date();
