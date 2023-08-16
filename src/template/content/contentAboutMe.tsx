@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-export default function Content() {
+export default function ContentAboutMe() {
   return (
     <>
       <div className="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
