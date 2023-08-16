@@ -1,11 +1,12 @@
-import About from "@/components/content/About";
-import Content from "@/components/content/Content";
-import NavBar from "@/components/navbar/Navbar";
+import About from "@/template/about/about";
+import Content from "@/template/content/contentAboutMe";
+import NavBar from "@/components/navbar/navbar";
+import { NAME, PAGE } from "../constants/constants";
 
 export default function Home() {
   return (
     <>
-      <NavBar />
+      <NavBar name={NAME} page={PAGE} />
       <Content />
       <About />
     </>

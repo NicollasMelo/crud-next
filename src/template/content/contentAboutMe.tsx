@@ -28,10 +28,12 @@ export default function Content() {
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
               Com 22 anos de idade, sou{" "}
-              <span className="text-white">Nicollas Melo</span>, um
-              desenvolvedor full stack junior apaixonado por tecnologia. Minha
-              jornada profissional de 9 meses em uma empresa de tecnologia me
-              permitiu explorar a fundo o ecossistema React e Node, enquanto
+              <span className="text-white">
+                <strong>Nicollas Melo</strong>
+              </span>
+              , um desenvolvedor full stack junior apaixonado por tecnologia.
+              Minha jornada profissional de 9 meses em uma empresa de tecnologia
+              me permitiu explorar a fundo o ecossistema React e Node, enquanto
               construo soluções inovadoras. Minha versatilidade e entusiasmo me
               levaram a mergulhar nas complexidades do desenvolvimento web,
               criando aplicações dinâmicas e responsivas. Estou empenhado em
@@ -72,10 +74,10 @@ export default function Content() {
               </div>
               <div className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">
-                  Horas trabalhadas por semana
+                  Horas em projetos pessoais
                 </dt>
                 <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  50
+                  1000+
                 </dd>
               </div>
               <div className="flex flex-col-reverse">

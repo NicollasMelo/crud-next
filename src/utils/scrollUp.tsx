@@ -1,5 +1,5 @@
 import Image from "next/image";
-import up from "../../../public/up.svg";
+import up from "../../public/up.svg";
 
 export default function ScrollUp() {
   const scrollToTop = () => {
